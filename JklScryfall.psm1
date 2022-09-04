@@ -30,8 +30,7 @@ foreach ( $Dir in $DirsToLoad ) {
       . $Script.FullName
 
       if ( $ExportCmds ) {
-        $FunctionName = $_.BaseName
-        Export-ModuleMember -Function $FunctionName
+        Export-ModuleMember -Function $Script.BaseName
       }
 
     }
@@ -39,4 +38,4 @@ foreach ( $Dir in $DirsToLoad ) {
     Write-Warning "Failed to locate the $Dir directory in the JklScryfall PowerShell module"
   }
 
-}
+} # End block:foreach Dir in DirsToLoad
